@@ -1,0 +1,43 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 340px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.workout {
+  background: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 0 20px;
+  border: 1px solid #ccc;
+}
+
+.workout__title {
+  font-size: 125%;
+  margin: 0 0 1.5em;
+}
+
+.rep-counter-list {
+  display: flex;
+  align-items: center;
+  margin: 0 -5px;
+}
+
+.rep-counter {
+  background: #fff;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 100%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}

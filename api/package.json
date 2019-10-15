@@ -1,0 +1,23 @@
+{
+  "name": "frontend-pairing-exercise-api",
+  "version": "1.0.0",
+  "description": "A API for the frontend pairing exercise app. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:db": "sudo mongod",
+    "setup:db": "mongoimport --db frontendpairingexericserdb --collection exercises --drop --file ./db/exercisesSeed.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [
+    "API"
+  ],
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.9",
+    "nodemon": "^1.11.0"
+  }
+}

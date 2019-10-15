@@ -1,0 +1,4 @@
+{
+  "presets": ["react"],
+  "plugins": ["babel-polyfill", "transform-class-properties", "transform-object-rest-spread"]
+}

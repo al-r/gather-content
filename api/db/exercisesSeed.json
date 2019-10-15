@@ -1,0 +1,3 @@
+{ "name": "Press ups", "numberOfSets": 5, "targetReps": 20 }
+{ "name": "Sit ups", "numberOfSets": 5, "targetReps": 30 }
+{ "name": "Pull ups", "numberOfSets": 5, "targetReps": 10 }
