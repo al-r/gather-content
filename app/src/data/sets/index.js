@@ -23,22 +23,31 @@ const initialState = [
 
 const sets = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT_COUNTER':
-      return state.reduce((acc, currentValue, currentIndex)=>{
-        if(action.payload.index === currentIndex) {
-          if(currentValue.repCount < 12) {
-            return {
-              ...currentValue,
-              repCount: currentValue.repCount++
-            };
-          } else {
-            return {
-              ...currentValue,
-              repCount: 0
-            };
-          }
+    case 'LOAD_SETS' :
+        return {
+            ...state,
+            sets: action.sets
+        }
+    case 'DELETE_SET':
+        let arr = state.sets.filter((set) => {
+          return (set._id !== action.setId);
+        });
+        return {
+          ...state,
+          sets: arr
+        }
+    case 'UPDATE_SET':
+      let updatedSets = state.sets.map(set=>{
+        if(set._id===action.set._id) {
+          return action.set;
+        } else {
+          return set;
         }
       });
+      return {
+        ...state,
+        sets: updatedSets
+      }
     default:
       return state;
   }

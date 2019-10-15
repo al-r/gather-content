@@ -1,15 +1,28 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {updateSet} from './../data/sets/actions.js';
 
-const RepCounter = ({set}) => {
+const RepCounter = (props) => {
     return (
-        <li key={set.workoutId}>
-            <button className="rep-counter">{set.repCount}</button>
+        <li>
+            <button className="rep-counter" onClick={()=>incrementRepCounter(props)}>{props.set.repCount}</button>
         </li>
     );
 }
 
-// RepCounter.propTypes = {
-//     workout: PropTypes.object
-// }
+const incrementRepCounter = (props) => {
+    if(props.set.repCount<props.target){
+        ++props.set.repCount;
+    } else {
+        props.set.repCount=0;
+    }
 
-export default RepCounter;
+    props.updateSet(props.set);
+}
+
+RepCounter.propTypes = {
+    set: PropTypes.object,
+}
+
+export default connect(null, {updateSet})(RepCounter);

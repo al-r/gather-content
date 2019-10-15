@@ -5,9 +5,10 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    sourceMapFilename: '[file].map'
   },
-  devtool: 'inline-source-map',
+  devtool: 'nosources-source-map',
   devServer: {
     contentBase: './dist',
     hot: true

@@ -1,14 +1,19 @@
-const initialState = {
-  1: {
+const initialState = [
+  {
     id: 1,
-    title: 'Press ups',
-    sets: 5,
-    reps: 12,
+    name: 'Press ups',
+    numberOfSets: 5,
+    targetReps: 12,
   },
-};
+];
 
 const exercises = (state = initialState, action) => {
   switch (action.type) {
+    case 'LOAD_EXERCISES' :
+        return {
+            ...state,
+            exercises: action.exercises
+        }
     default:
       return state;
   }

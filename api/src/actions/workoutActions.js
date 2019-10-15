@@ -45,7 +45,7 @@ exports.createWorkout = function(req, res) {
 
   newWorkout.save(function(error, workout) {
     if (error) res.send(error);
-
+    
     Exercise.findById(
       req.body.exerciseId,
       function(error, exercise) {
@@ -70,6 +70,18 @@ exports.deleteWorkout = function(req, res) {
         res.send(error);
 
       res.json({ message: 'Workout was successfully deleted' });
+    }
+  );
+};
+
+exports.getWorkoutsByExercise = function(req, res) {
+  Workout.find(
+    { exerciseId: req.params.exerciseId },
+    function(error, workouts) {
+      if (error)
+        res.send(error);
+
+      res.json(workouts);
     }
   );
 };

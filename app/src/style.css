@@ -3,8 +3,43 @@ body {
 }
 
 .container {
+  border: 1px solid #000;
   max-width: 340px;
   margin: 20px auto;
+}
+
+.tabs {
+  background-color: #FF623F;
+  border-bottom: 1px solid #000;
+  display: flex;
+  margin: 0;
+  padding: 20px;
+}
+
+.tabs__item {
+  background-color: #FF623F;
+  border: 1px solid #FFF;
+  color: #FFF;
+  cursor: pointer;
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+.tabs__item:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.tabs__item--selected {
+  background-color: #FFF;
+  color: #FF623F;
+  cursor: text;
+}
+.tabs__item--selected:hover {
+  background-color: #FFF;
+}
+
+.workout-group {
+  margin: 0;
   padding: 20px;
 }
 
@@ -16,15 +51,27 @@ body {
   border: 1px solid #ccc;
 }
 
+.workout:last-of-type {
+  margin: 0;
+}
+
 .workout__title {
+  display: inline-block;
   font-size: 125%;
+  font-weight: normal;
   margin: 0 0 1.5em;
+}
+
+.workout__settings {
+  color: #FF623F;
+  float: right;
 }
 
 .rep-counter-list {
   display: flex;
   align-items: center;
   margin: 0 -5px;
+  padding: 0;
 }
 
 .rep-counter {
@@ -38,6 +85,41 @@ body {
   cursor: pointer;
 }
 
+.rep-counter:hover {
+  background-color: #ccc;
+}
+
+.rep-counter:focus {
+  background-color: #FF623F;
+  box-shadow: none;
+  color: #FFF;
+  outline: 0;
+}
+
 ul {
   list-style-type: none;
+}
+
+.button {
+  background-color: #FF623F;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.button--add {
+  margin: 20px 20px 0 0;
+}
+
+.button--delete {
+  margin: 20px 0 0 0;
+}
+
+select {
+  background-color: #FFF;
+  border: 1px solid #FF623F;
+  color: #FF623F;
+  margin: 20px 20px 0 20px;
+  height: 23px;
 }
